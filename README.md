@@ -1,4 +1,4 @@
-# Mi Configuracion Vim
+# Mi Configuracion Vim + Vundle
 
 ## Instalacion: simplemente clona el repositorio
 
@@ -6,11 +6,17 @@
 $ git clone git@bitbucket.org:jesusangelm/confvim.git ~/.vim
 ```
 
-**Crea los enlaces simbolicos (symlinks) a los .vimrc y .gvimrc:**
+**Crea los enlaces simbolicos (symlinks) al .vimrc :**
 
 ```bash
 $ ln -s ~/.vim/vimrc ~/.vimrc
 $ ln -s ~/.vim/vimrc ~/.gvimrc
+```
+
+**Instala Vundle**
+
+```bash
+git clone http://github.com/gmarik/vundle.git bundle/vundle
 ```
 
 **Instala los plugins:**

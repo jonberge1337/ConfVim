@@ -45,6 +45,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'slim-template/vim-slim'
 Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/CSApprox'
+Bundle 'chriskempson/vim-tomorrow-theme'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
