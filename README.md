@@ -3,7 +3,7 @@
 ## Instalacion: simplemente clona el repositorio
 
 ```bash
-$ git clone git@bitbucket.org:jesusangelm/confvim.git ~/.vim
+$ git clone https://jesusangelm@bitbucket.org/jesusangelm/confvim.git ~/.vim
 ```
 
 **Crea los enlaces simbolicos (symlinks) al .vimrc :**
@@ -16,7 +16,7 @@ $ ln -s ~/.vim/vimrc ~/.gvimrc
 **Instala Vundle**
 
 ```bash
-git clone http://github.com/gmarik/vundle.git bundle/vundle
+$ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ```
 
 **Instala los plugins:**
@@ -29,6 +29,7 @@ Clone el repositorio de fuentes para Powerline.
 ```bash
 git clone https://github.com/Lokaltog/powerline-fonts.git
 ```
+e instale sus fuentes favoritas
 
 # Plugins incluidos:
 
@@ -36,6 +37,7 @@ git clone https://github.com/Lokaltog/powerline-fonts.git
  * vim-bundler
  * coffee-script
  * css-color
+ * color-picker
  * ctrlp
  * cucumber
  * delimitMate
@@ -49,13 +51,18 @@ git clone https://github.com/Lokaltog/powerline-fonts.git
  * nginx
  * powerline
  * snipmate
- * snipmate-snippets
+ * snippets
  * surround
  * syntastic
  * tabular
+ * tlib
+ * vim-elixir
+ * vim-less
  * vim-rails
  * vim-rake
  * vim-ruby
+ * vim-slim
+ * CSApprox
 
 
 # Colorscheme: instalados como plugins.
@@ -65,6 +72,8 @@ git clone https://github.com/Lokaltog/powerline-fonts.git
  * jellybeans
  * railscasts
  * solarized
+ * tomorrow
+ * hybrid
 
 
 # Mapeos de teclas:
