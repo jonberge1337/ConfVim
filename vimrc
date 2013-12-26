@@ -172,7 +172,7 @@ let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_enable_auto_delimiter = 1
-let g:neocomplcache_auto_completion_start_length = 1
+let g:neocomplcache_auto_completion_start_length = 2
 "let g:neocomplcache_snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
 
 if !exists('g:neocomplcache_keyword_patterns')

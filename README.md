@@ -3,7 +3,7 @@
 ## Instalacion: simplemente clona el repositorio
 
 ```bash
-$ git clone https://jesusangelm@bitbucket.org/jesusangelm/confvim.git ~/.vim
+$ git clone https://github.com/jesusangelm/ConfVim.git ~/.vim
 ```
 
 **Crea los enlaces simbolicos (symlinks) al .vimrc :**
