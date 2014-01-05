@@ -29,7 +29,6 @@ Bundle 'tomasr/molokai'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'dan-bolsun/vim-nginx'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'garbas/vim-snipmate'
 Bundle 'altercation/vim-colors-solarized'
@@ -47,6 +46,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/CSApprox'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'w0ng/vim-hybrid'
+Bundle 'bling/vim-airline'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -191,8 +191,9 @@ if !exists('g:neocomplcache_omni_patterns')
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 
-"Config para Powerline
-let g:Powerline_symbols = 'fancy'
+"Config para Vim-Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 set noshowmode
 if ! has('gui_running')
     set ttimeoutlen=10

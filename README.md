@@ -49,7 +49,7 @@ e instale sus fuentes favoritas
  * neocomplcache
  * nerdtree
  * nginx
- * powerline
+ * vim-airline
  * snipmate
  * snippets
  * surround
