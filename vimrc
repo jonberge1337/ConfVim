@@ -11,7 +11,6 @@ Bundle 'gmarik/vundle'
 "Plugins
 Bundle 'mileszs/ack.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'sjl/badwolf'
 Bundle 'tpope/vim-bundler'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ap/vim-css-color'
@@ -23,15 +22,11 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'tpope/vim-markdown'
-Bundle 'tomasr/molokai'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'dan-bolsun/vim-nginx'
-Bundle 'jpo/vim-railscasts-theme'
 Bundle 'garbas/vim-snipmate'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
 Bundle 'godlygeek/tabular'
@@ -44,9 +39,16 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'slim-template/vim-slim'
 Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/CSApprox'
+Bundle 'bling/vim-airline'
+
+"Esquema de colores
+Bundle 'sjl/badwolf'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'tomasr/molokai'
+Bundle 'jpo/vim-railscasts-theme'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'w0ng/vim-hybrid'
-Bundle 'bling/vim-airline'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -151,7 +153,8 @@ cmap w!! w !sudo tee % >/dev/null
 "Cambia el directorio a la ventana actual
 set autochdir
 
-"""""""""configs de plugins""""""""""""""""""
+"""""""""CONFIGS DE PLUGINS""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""
 
 "nerdtree configs
 let g:NERDTreeMouseMode = 2
@@ -207,9 +210,14 @@ endif
 "Config para CtrlP
 let g:ctrlp_working_path_mode = 'c'
 
-""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""Mapeos de teclas"""""""""""""""""
+""""""""""MAPEOS DE TECLAS""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Mapea <leader> a la tecla ,  (coma)
+let mapleader=","
 
 "Presiona F3 para entrar/salir al modo pegar mientras editas un archivo
 set pastetoggle=<F3>
@@ -264,4 +272,5 @@ if exists(":Tabularize")
 
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""
+"""""""""Fin Mapeos de Teclas""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

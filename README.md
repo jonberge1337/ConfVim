@@ -34,6 +34,7 @@ e instale sus fuentes favoritas
 # Plugins incluidos:
 
  * ACK
+ * vim-addons-mw-utils
  * vim-bundler
  * coffee-script
  * css-color
@@ -49,9 +50,7 @@ e instale sus fuentes favoritas
  * neocomplcache
  * nerdtree
  * nginx
- * vim-airline
  * snipmate
- * snippets
  * surround
  * syntastic
  * tabular
@@ -62,14 +61,16 @@ e instale sus fuentes favoritas
  * vim-rake
  * vim-ruby
  * vim-slim
+ * snippets
  * CSApprox
+ * vim-airline
 
 
 # Colorscheme: instalados como plugins.
 
  * badwolf
- * molokai
  * jellybeans
+ * molokai
  * railscasts
  * solarized
  * tomorrow
@@ -78,9 +79,21 @@ e instale sus fuentes favoritas
 
 # Mapeos de teclas:
 
+ * `<leader>` esta mapeado a la tecla "," (coma)
+
  * Presiona `F2` para activar NERDTree.
  * Presiona `F3` para entrar/salir del modo pegar.
  * Presiona `F7` para identar automaticamente todo el contenido del buffer.
  * Presiona `<leader>v` para abrir un tab con tu .vimrc para rapida edicion.
  * Presiona `<space>` (Barra Espaciadora) para eliminar busquedas resaltada.
+ * Presiona `w!!` para guardar cambios que requieren de SUDO y lo olvidaste.
+
+**Mapeos para Fugitive**
+
+* Presiona `<leader>gs` para un `git status`
+* Presiona `<leader>gd` para un `git diff`
+* Presiona `<leader>gc` para un `git commmit`
+* Presiona `<leader>gb` para un `git blame`
+* Presiona `<leader>gl` para un `git log`
+* Presiona `<leader>gp` para un `git push`
 
