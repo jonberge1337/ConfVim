@@ -278,5 +278,8 @@ if exists(":Tabularize")
 
 endif
 
+"Presiona  ,be para explorar rapidamente los buffers
+nmap <leader>be :EasyBufferToggle<enter>
+
 """""""""Fin Mapeos de Teclas""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

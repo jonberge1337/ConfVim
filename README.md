@@ -86,6 +86,7 @@ e instale sus fuentes favoritas
  * Presiona `<leader>v` para abrir un tab con tu .vimrc para rapida edicion.
  * Presiona `<space>` (Barra Espaciadora) para eliminar busquedas resaltada.
  * Presiona `w!!` para guardar cambios que requieren de SUDO y lo olvidaste.
+ * Presiona `<leader>be` para explorar rapidamente los buffers
 
 **Mapeos para Fugitive**
 
