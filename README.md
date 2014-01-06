@@ -38,7 +38,6 @@ e instale sus fuentes favoritas
  * vim-bundler
  * coffee-script
  * css-color
- * color-picker
  * ctrlp
  * cucumber
  * delimitMate
