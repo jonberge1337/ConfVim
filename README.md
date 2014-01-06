@@ -63,6 +63,7 @@ e instale sus fuentes favoritas
  * snippets
  * CSApprox
  * vim-airline
+ * easybuffer.vim
 
 
 # Colorscheme: instalados como plugins.
@@ -78,8 +79,7 @@ e instale sus fuentes favoritas
 
 # Mapeos de teclas:
 
- * `<leader>` esta mapeado a la tecla "," (coma)
-
+ * `<leader>` esta mapeado a la tecla "," (coma).
  * Presiona `F2` para activar NERDTree.
  * Presiona `F3` para entrar/salir del modo pegar.
  * Presiona `F7` para identar automaticamente todo el contenido del buffer.

@@ -39,6 +39,7 @@ Bundle 'slim-template/vim-slim'
 Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/CSApprox'
 Bundle 'bling/vim-airline'
+Bundle 'troydm/easybuffer.vim'
 
 "Esquema de colores
 Bundle 'sjl/badwolf'
