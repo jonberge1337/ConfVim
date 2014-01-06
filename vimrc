@@ -153,6 +153,12 @@ cmap w!! w !sudo tee % >/dev/null
 "Cambia el directorio a la ventana actual
 set autochdir
 
+" folding
+set foldcolumn=0 " columns for folding
+set foldmethod=indent
+set foldlevel=9
+set nofoldenable "dont fold by default "
+
 """""""""CONFIGS DE PLUGINS""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""
 
