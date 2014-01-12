@@ -39,7 +39,6 @@ Bundle 'slim-template/vim-slim'
 Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/CSApprox'
 Bundle 'bling/vim-airline'
-Bundle 'troydm/easybuffer.vim'
 
 "Esquema de colores
 Bundle 'sjl/badwolf'
@@ -277,9 +276,6 @@ if exists(":Tabularize")
   endfunction
 
 endif
-
-"Presiona  ,be para explorar rapidamente los buffers
-nmap <leader>be :EasyBufferToggle<enter>
 
 """""""""Fin Mapeos de Teclas""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
