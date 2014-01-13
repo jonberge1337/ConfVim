@@ -22,7 +22,9 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
-Bundle 'Shougo/neocomplcache.vim'
+Bundle 'Shougo/neocomplete.vim'
+Bundle 'Shougo/neosnippet.vim'
+Bundle 'Shougo/neosnippet-snippets'
 Bundle 'scrooloose/nerdtree'
 Bundle 'dan-bolsun/vim-nginx'
 Bundle 'garbas/vim-snipmate'
@@ -174,30 +176,25 @@ let g:syntastic_auto_loc_list=2
 let g:rubycomplete_classes_in_global = 1
 
 "config para Neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_enable_auto_delimiter = 1
-let g:neocomplcache_auto_completion_start_length = 2
-"let g:neocomplcache_snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
-
-if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+" Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neocomplete#force_overwrite_completefunc = 1
 
 "Config para Vim-Airline
 let g:airline_powerline_fonts = 1
