@@ -62,18 +62,18 @@ set background=dark
 "Esquema de colores
 colorscheme molokai
 
-"permitir backspacing en modo insertar
+"permitir la tecla retroceso en modo insertar para eliminar.
 set backspace=indent,eol,start
 
 set noswapfile "desactiva los archivos Swap
 set nobackup   "no se crean respaldos permanentes cuando se guarda un archivo
 set nowritebackup "no se crean respaldos temporales al guardar archivos
 
-"load ftplugins and indent files
-filetype off "requerido por Vundle
-filetype plugin on
-filetype indent on
-filetype plugin indent on "requerido por Vundle
+"Desactiva la deteccion de tipo de archivo, por extencio o contenido.
+filetype off "requerido por Vundle!!!
+"Activa la deteccion de tipo de archivo desactivada arriba, las extensiones
+"de tipo de archivos y las indentaciones de tipos de archivos.
+filetype plugin indent on "requerido por Vundle!!!
 
 "activacion resaltado de sintaxys
 syntax on
@@ -85,20 +85,20 @@ set ttymouse=xterm2
 "hide buffers when not displayed
 set hidden
 
-"historial de linea de comandos
-set history=1000
+"historial de comandos en la linea de comandos
+set history=100
 
 "muchos historial de deshacer
 set undolevels=1000
 
-set showcmd     "show incomplete cmds down the bottom
-set showmode    "show current mode down the bottom
+set showcmd     "Muestra comandos incompletos en esquina inferior derecha
+set showmode    "Muestra el modo actual
 
 set number      "enumerar las lineas
 
 set ignorecase "busquedas no distinguen mayusculas y minusculas
-set incsearch   "find the next match as we type the search
-set hlsearch    "hilight searches by default
+set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
+set hlsearch    "Resalta las busquedas
 
 set wrap        "corta lineas largas para evitar scroll horizontal
 set showbreak=↪ "marca para indicar un quiebre de lineas largas
@@ -113,7 +113,9 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
-"configs de identacion
+"autoidenta las lineas. Si escribes una linea con sangria, al dar ENTER o
+"la tecla O para crear una nueva linea, esta linea tendra la misma sangria
+"que la linea anterior.
 set autoindent
 set smartindent
 
@@ -133,7 +135,7 @@ scriptencoding utf-8
 set guifont=Inconsolata\ Medium\ 12
 "   ^^^ Fuente parchada para compatibilidad con Powerline 
 
-"StatusLine configs
+"Muestra la linea de status
 set laststatus=2
 
 "cursor mas alla del ultimo caracter en modo normal
