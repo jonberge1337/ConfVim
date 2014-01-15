@@ -176,7 +176,7 @@ let g:syntastic_auto_loc_list=2
 let g:rubycomplete_classes_in_global = 1
 
 "config para Neocomplcache
-let g:acp_enableAtStartup = 0
+"let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
@@ -211,6 +211,7 @@ endif
 
 "Config para CtrlP
 let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_cmd = 'CtrlPBuffer'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
