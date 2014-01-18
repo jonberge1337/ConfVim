@@ -107,11 +107,15 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:⋅,nbsp:.
 set colorcolumn=80 "marca el ancho maximo que deberia tener una linea
 set textwidth=80
 
-"configs de identacion
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+"""""   configs de identacion   
+"sangrado con espacios y no con tabulacion.
 set expandtab
+set smarttab
+"sangrado de linea de 2 espacios
+set shiftwidth=2
+"TAB inserta 2 espacios de sangrado
+set softtabstop=2
+set tabstop=4
 
 "autoidenta las lineas. Si escribes una linea con sangria, al dar ENTER o
 "la tecla O para crear una nueva linea, esta linea tendra la misma sangria
@@ -162,6 +166,15 @@ set foldmethod=indent
 set foldlevel=9
 set nofoldenable "dont fold by default "
 
+"Vim regresa a la misma linea cuando reabres un archivo
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \ execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
 """""""""CONFIGS DE PLUGINS""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""
 
@@ -181,7 +194,7 @@ let g:rubycomplete_classes_in_global = 1
 "let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
@@ -210,6 +223,9 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+"Theme para airline
+let g:airline_theme="powerlineish"
 
 "Config para CtrlP
 let g:ctrlp_working_path_mode = 'c'
@@ -279,6 +295,12 @@ if exists(":Tabularize")
   endfunction
 
 endif
+
+"mapeos para EasyMotion
+let g:EasyMotion_mapping_f = "<leader>f"
+let g:EasyMotion_mapping_F = "<leader>F"
+let g:EasyMotion_mapping_w = "<leader>w"
+let g:EasyMotion_mapping_b = "<leader>W"
 
 """""""""Fin Mapeos de Teclas""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
