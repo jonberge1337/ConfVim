@@ -121,7 +121,6 @@ set tabstop=4
 "la tecla O para crear una nueva linea, esta linea tendra la misma sangria
 "que la linea anterior.
 set autoindent
-set smartindent
 
 "shell
 set shell=/bin/zsh
