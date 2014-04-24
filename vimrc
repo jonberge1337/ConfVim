@@ -100,7 +100,8 @@ set ignorecase "busquedas no distinguen mayusculas y minusculas
 set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
 set hlsearch    "Resalta las busquedas
 
-set wrap        "corta lineas largas para evitar scroll horizontal
+set visualbell "Desactiva el maldito beep!
+set nowrap        "NO corta las lineas largas para evitar scroll horizontal
 set showbreak=↪ "marca para indicar un quiebre de lineas largas
 set list "muestra tabulaciones, fin de linea, espacios, etc.
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:⋅,nbsp:.
@@ -116,7 +117,6 @@ set shiftwidth=2
 "TAB inserta 2 espacios de sangrado
 set softtabstop=2
 set tabstop=4
-
 "autoidenta las lineas. Si escribes una linea con sangria, al dar ENTER o
 "la tecla O para crear una nueva linea, esta linea tendra la misma sangria
 "que la linea anterior.
@@ -230,8 +230,7 @@ let g:airline_theme="powerlineish"
 "Config para CtrlP
 let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_cmd = 'CtrlPBuffer'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 """"""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
