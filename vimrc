@@ -9,38 +9,39 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 "Plugins
-Bundle 'mileszs/ack.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tpope/vim-bundler'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'ap/vim-css-color'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-cucumber'
-Bundle 'Raimondi/delimitMate'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'Shougo/neosnippet.vim'
 Bundle 'Shougo/neosnippet-snippets'
 Bundle 'scrooloose/nerdtree'
-Bundle 'dan-bolsun/vim-nginx'
-Bundle 'garbas/vim-snipmate'
-Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'godlygeek/tabular'
 Bundle 'tomtom/tlib_vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'KohPoll/vim-less'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'slim-template/vim-slim'
 Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/CSApprox'
 Bundle 'bling/vim-airline'
+Bundle 'dan-bolsun/vim-nginx'
+Bundle 'garbas/vim-snipmate'
+Bundle 'mileszs/ack.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'ap/vim-css-color'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Lokaltog/vim-easymotion'
 
 "Esquema de colores
 Bundle 'sjl/badwolf'
@@ -177,19 +178,29 @@ augroup END
 """""""""CONFIGS DE PLUGINS""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""
 
-"nerdtree configs
+"NERDtree
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 40
 let NERDTreeChDirMode = 2
+"F2 activa NERDTree
+nnoremap <f2> :NERDTreeToggle .<cr>
+" ,p resalta el archivo actual en el arbol.
+nmap <leader>p :NERDTreeFind<CR>
 
-"syntastic configs
+
+"Syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
+let g:syntastic_check_on_wq=0
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
-"config para vim-ruby
+
+"Vim-Ruby
 let g:rubycomplete_classes_in_global = 1
 
-"config para Neocomplcache
+
+"Neocomplcache
 "let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -210,6 +221,7 @@ autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 let g:neocomplete#force_overwrite_completefunc = 1
 
+
 "Config para Vim-Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -222,9 +234,9 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
 "Theme para airline
 let g:airline_theme="powerlineish"
+
 
 "Config para CtrlP
 let g:ctrlp_working_path_mode = 'c'
@@ -232,31 +244,8 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-""""""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""MAPEOS DE TECLAS""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"Mapea <leader> a la tecla ,  (coma)
-let mapleader=","
-
-"Presiona F3 para entrar/salir al modo pegar mientras editas un archivo
-set pastetoggle=<F3>
-
-"F2 activa NERDTree
-nnoremap <f2> :NERDTreeToggle .<cr>
-
-"Leader+v abre en un tab el vimrc para editar
-nmap <leader>v :tabnew $MYVIMRC<CR>
-
-"arregla identacion presionando la tecla F7
-map <F7> mzgg=G`z<CR>
-
-"presiona espacio para borrar la busqueda resaltada
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-"Mapeos para Fugitive
+"Fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
@@ -264,7 +253,8 @@ nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
 
-"Mapeos para Tabularize y otras mejoras
+
+"Tabularize
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
@@ -294,11 +284,47 @@ if exists(":Tabularize")
 
 endif
 
-"mapeos para EasyMotion
+
+"EasyMotion
 let g:EasyMotion_mapping_f = "<leader>f"
 let g:EasyMotion_mapping_F = "<leader>F"
 let g:EasyMotion_mapping_w = "<leader>w"
 let g:EasyMotion_mapping_b = "<leader>W"
 
+"NERDcommenter
+" ,/ para comentar/descomentar la linea o seleccion de codigo
+nmap <leader>/ :call NERDComment(0, "invert")<cr>
+vmap <leader>/ :call NERDComment(0, "invert")<cr>
+
+
+""""""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+""""""""""MAPEOS DE TECLAS""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Mapea <leader> a la tecla ,  (coma)
+let mapleader=","
+
+
+"Presiona F3 para entrar/salir al modo pegar mientras editas un archivo
+set pastetoggle=<F3>
+
+
+"Leader+v abre en un tab el vimrc para editar
+nmap <leader>v :tabnew $MYVIMRC<CR>
+
+
+"arregla identacion presionando la tecla F7
+map <F7> mzgg=G`z<CR>
+
+
+"presiona espacio para borrar la busqueda resaltada
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+
 """""""""Fin Mapeos de Teclas""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
