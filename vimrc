@@ -42,6 +42,7 @@ Bundle 'ap/vim-css-color'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rking/ag.vim'
 
 "Esquema de colores
 Bundle 'sjl/badwolf'
