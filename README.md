@@ -87,6 +87,10 @@ e instale sus fuentes favoritas
  * Presiona `<space>` (Barra Espaciadora) para eliminar busquedas resaltada.
  * Presiona `w!!` para guardar cambios que requieren de SUDO y lo olvidaste.
  * Presiona `<leader>be` para explorar rapidamente los buffers
+ * `zc` cierra un fold
+ * `zo` abre un fold
+ * `zM` cierra todos los fold
+ * `zR` abre todos los fold
 
 **Mapeos para Fugitive**
 
