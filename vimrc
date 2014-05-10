@@ -308,6 +308,14 @@ vmap <leader>/ :call NERDComment(0, "invert")<cr>
 "Mapea <leader> a la tecla ,  (coma)
 let mapleader=","
 
+"Cortar, Copiar y Pegar con las teclas ,d ,y y ,p
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
 
 "Presiona F3 para entrar/salir al modo pegar mientras editas un archivo
 set pastetoggle=<F3>
