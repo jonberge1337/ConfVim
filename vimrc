@@ -290,10 +290,6 @@ let g:EasyMotion_mapping_F = "<leader>F"
 let g:EasyMotion_mapping_w = "<leader>w"
 let g:EasyMotion_mapping_b = "<leader>W"
 
-"NERDcommenter
-" ,/ para comentar/descomentar la linea o seleccion de codigo
-nmap <leader>/ :call NERDComment(0, "invert")<cr>
-vmap <leader>/ :call NERDComment(0, "invert")<cr>
 
 
 """"""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""

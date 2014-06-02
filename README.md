@@ -91,6 +91,8 @@ e instale sus fuentes favoritas
  * `zo` abre un fold
  * `zM` cierra todos los fold
  * `zR` abre todos los fold
+ * `<leader> cc` Para comentar la linea actual o una seleccion de lineas.
+ * `<leader> cu` Para descomentar la linea actual o una seleccion de lineas
 
 **Mapeos para Fugitive**
 
