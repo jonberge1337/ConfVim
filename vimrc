@@ -44,7 +44,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rking/ag.vim'
 
 "Esquema de colores
-Bundle 'sjl/badwolf'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'tomasr/molokai'
 Bundle 'jpo/vim-railscasts-theme'
