@@ -46,7 +46,6 @@ Bundle 'rking/ag.vim'
 "Esquema de colores
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'tomasr/molokai'
-Bundle 'jpo/vim-railscasts-theme'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'w0ng/vim-hybrid'
