@@ -59,7 +59,7 @@ set t_Co=256
 set background=dark
 
 "Esquema de colores
-colorscheme molokai
+colorscheme jellybeans
 
 "permitir la tecla retroceso en modo insertar para eliminar.
 set backspace=indent,eol,start
