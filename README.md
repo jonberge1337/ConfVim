@@ -68,10 +68,8 @@ e instale sus fuentes favoritas
 
 # Colorscheme: instalados como plugins.
 
- * badwolf
  * jellybeans
  * molokai
- * railscasts
  * solarized
  * tomorrow
  * hybrid
