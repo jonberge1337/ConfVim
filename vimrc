@@ -237,10 +237,11 @@ let g:airline_theme="powerlineish"
 
 
 "Config para CtrlP
-let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_cmd = 'CtrlPBuffer'
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+      \ 'dir': '\v[\/]\.(git|hg|svn)$',
+      \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+      \ }
 
 
 "Fugitive
