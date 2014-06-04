@@ -40,8 +40,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'ap/vim-css-color'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rking/ag.vim'
+Bundle 'majutsushi/tagbar'
 
 "Esquema de colores
 Bundle 'nanotech/jellybeans.vim'
@@ -198,7 +198,7 @@ let g:syntastic_warning_symbol='⚠'
 let g:rubycomplete_classes_in_global = 1
 
 
-"Neocomplcache
+"Neocomplete
 "let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -284,13 +284,8 @@ if exists(":Tabularize")
 endif
 
 
-"EasyMotion
-let g:EasyMotion_mapping_f = "<leader>f"
-let g:EasyMotion_mapping_F = "<leader>F"
-let g:EasyMotion_mapping_w = "<leader>w"
-let g:EasyMotion_mapping_b = "<leader>W"
-
-
+"Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 """"""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
