@@ -42,6 +42,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'rking/ag.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'moll/vim-node'
+Bundle 'digitaltoad/vim-jade'
 
 "Esquema de colores
 Bundle 'nanotech/jellybeans.vim'
@@ -166,8 +170,8 @@ set nofoldenable "dont fold by default "
 
 "Vim regresa a la misma linea cuando reabres un archivo
 augroup line_return
-    au!
-    au BufReadPost *
+  au!
+  au BufReadPost *
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
         \ execute 'normal! g`"zvzz' |
         \ endif
@@ -205,7 +209,7 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 " Enable omni completion.
@@ -225,12 +229,12 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 set noshowmode
 if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
 endif
 "Theme para airline
 let g:airline_theme="powerlineish"
@@ -255,6 +259,8 @@ nnoremap <silent> <leader>gp :Git push<CR>
 
 "Tabularize
 if exists(":Tabularize")
+  nmap <Leader>a& :Tabularize /&<CR>
+  vmap <Leader>a& :Tabularize /&<CR>
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
   nmap <Leader>a: :Tabularize /:<CR>
@@ -263,9 +269,10 @@ if exists(":Tabularize")
   vmap <Leader>a:: :Tabularize /:\zs<CR>
   nmap <Leader>a, :Tabularize /,<CR>
   vmap <Leader>a, :Tabularize /,<CR>
+  nmap <Leader>a,, :Tabularize /,\zs<CR>
+  vmap <Leader>a,, :Tabularize /,\zs<CR>
   nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
   vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
   " The following function automatically aligns when typing a
   " supported character
   inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
@@ -286,6 +293,7 @@ endif
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
+
 
 """"""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
