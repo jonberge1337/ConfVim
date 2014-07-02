@@ -46,6 +46,7 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'moll/vim-node'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'jnwhiteh/vim-golang'
 
 "Esquema de colores
 Bundle 'nanotech/jellybeans.vim'
@@ -294,6 +295,9 @@ endif
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+"Golang Config
+set rtp+=~/.vim/bundle/vim-golang/
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 """"""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
