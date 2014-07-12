@@ -18,24 +18,22 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'Shougo/neosnippet.vim'
-Bundle 'Shougo/neosnippet-snippets'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'Shougo/neocomplete.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'KohPoll/vim-less'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'slim-template/vim-slim'
-Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/CSApprox'
 Bundle 'bling/vim-airline'
-Bundle 'garbas/vim-snipmate'
 Bundle 'mileszs/ack.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ap/vim-css-color'
 Bundle 'kien/ctrlp.vim'
@@ -221,7 +219,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 let g:neocomplete#force_overwrite_completefunc = 1
 
 
