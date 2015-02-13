@@ -44,7 +44,7 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'moll/vim-node'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 
 "Esquema de colores
 Bundle 'nanotech/jellybeans.vim'
@@ -108,7 +108,7 @@ set showbreak=↪ "marca para indicar un quiebre de lineas largas
 set list "muestra tabulaciones, fin de linea, espacios, etc.
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:⋅,nbsp:.
 set colorcolumn=80 "marca el ancho maximo que deberia tener una linea
-set textwidth=80
+"set textwidth=80
 
 """""   configs de identacion   
 "sangrado con espacios y no con tabulacion.
@@ -292,9 +292,35 @@ endif
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
 
-"Golang Config
-set rtp+=~/.vim/bundle/vim-golang/
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
+"vim-go Config
 
 """"""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
