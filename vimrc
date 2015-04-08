@@ -1,59 +1,69 @@
 "Usamos Vim, no VI
 set nocompatible
+filetype off "requerido por Vundle!!!
 
 "Vundle!!!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 "Vundle administra Vundle!!! WTF!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 "Plugins
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'KohPoll/vim-less'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'slim-template/vim-slim'
-Bundle 'vim-scripts/CSApprox'
-Bundle 'bling/vim-airline'
-Bundle 'mileszs/ack.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'ap/vim-css-color'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'rking/ag.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'moll/vim-node'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'fatih/vim-go'
+
+""" Ruby/Rails
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'vim-ruby/vim-ruby'
+
+
+""" JS
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
+
+
+""" Golang
+Plugin 'fatih/vim-go'
+
+
+""" HTML/CSS/Templates
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'KohPoll/vim-less'
+Plugin 'slim-template/vim-slim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'digitaltoad/vim-jade'
+
+
+"""" Herramientas/Utilerias
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'bling/vim-airline'
+Plugin 'ap/vim-css-color'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'airblade/vim-gitgutter'
+
 
 "Esquema de colores
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'tomasr/molokai'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'w0ng/vim-hybrid'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'w0ng/vim-hybrid'
 
+call vundle#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "soporte de 256 colores en la terminal
@@ -65,6 +75,8 @@ set background=dark
 "Esquema de colores
 colorscheme jellybeans
 
+set synmaxcol=1200
+
 "permitir la tecla retroceso en modo insertar para eliminar.
 set backspace=indent,eol,start
 
@@ -73,13 +85,14 @@ set nobackup   "no se crean respaldos permanentes cuando se guarda un archivo
 set nowritebackup "no se crean respaldos temporales al guardar archivos
 
 "Desactiva la deteccion de tipo de archivo, por extencio o contenido.
-filetype off "requerido por Vundle!!!
+
 "Activa la deteccion de tipo de archivo desactivada arriba, las extensiones
 "de tipo de archivos y las indentaciones de tipos de archivos.
 filetype plugin indent on "requerido por Vundle!!!
 
 "activacion resaltado de sintaxys
 syntax on
+syntax sync fromstart
 
 "soporte de raton
 set mouse=a
@@ -111,7 +124,7 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:⋅,nbsp:.
 set colorcolumn=80 "marca el ancho maximo que deberia tener una linea
 "set textwidth=80
 
-"""""   configs de identacion   
+"""""   configs de identacion
 "sangrado con espacios y no con tabulacion.
 set expandtab
 set smarttab
@@ -126,7 +139,7 @@ set tabstop=4
 set autoindent
 
 "shell
-set shell=/bin/zsh
+set shell=/usr/bin/zsh
 
 "Resalta la linea donde esta el cursorline"
 set cursorline
@@ -177,6 +190,10 @@ augroup line_return
         \ endif
 augroup END
 
+
+"Recarga automaticamente el buffer cuando un archivo ha tenido algun cambio
+set autoread
+
 """""""""CONFIGS DE PLUGINS""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""
 
@@ -203,10 +220,10 @@ let g:rubycomplete_classes_in_global = 1
 
 
 "Neocomplete
-"let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 if !exists('g:neocomplete#keyword_patterns')
   let g:neocomplete#keyword_patterns = {}
@@ -281,38 +298,13 @@ function! s:align()
 endfunction
 
 
-"Tagbar
-nmap <F8> :TagbarToggle<CR>
-
-let g:tagbar_type_go = {
-      \ 'ctagstype' : 'go',
-      \ 'kinds'     : [
-      \ 'p:package',
-      \ 'i:imports:1',
-      \ 'c:constants',
-      \ 'v:variables',
-      \ 't:types',
-      \ 'n:interfaces',
-      \ 'w:fields',
-      \ 'e:embedded',
-      \ 'm:methods',
-      \ 'r:constructor',
-      \ 'f:functions'
-      \ ],
-      \ 'sro' : '.',
-      \ 'kind2scope' : {
-      \ 't' : 'ctype',
-      \ 'n' : 'ntype'
-      \ },
-      \ 'scope2kind' : {
-      \ 'ctype' : 't',
-      \ 'ntype' : 'n'
-      \ },
-      \ 'ctagsbin'  : 'gotags',
-      \ 'ctagsargs' : '-sort -silent'
-      \ }
-
 "vim-go Config
+" Habilitar el resaltado de syntaxis para funciones, metodos y structs
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 """"""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -352,4 +344,3 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 """""""""Fin Mapeos de Teclas""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
