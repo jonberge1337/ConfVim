@@ -16,12 +16,12 @@ $ ln -s ~/.vim/vimrc ~/.gvimrc
 **Instala Vundle**
 
 ```bash
-$ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 **Instala los plugins:**
 
-Abra `vim` y ejecute `:BundleInstall`  (o `vim +BundleInstall +qall` para los amantes de la terminal)
+Abra `vim` y ejecute `:PluginInstall`  (o `vim +PluginInstall +qall` para los amantes de la terminal)
 
 **Fuentes parchadas para Powerline**
 
@@ -100,4 +100,3 @@ e instale sus fuentes favoritas
 * Presiona `<leader>gb` para un `git blame`
 * Presiona `<leader>gl` para un `git log`
 * Presiona `<leader>gp` para un `git push`
-
