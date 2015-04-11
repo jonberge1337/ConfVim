@@ -33,62 +33,55 @@ e instale sus fuentes favoritas
 
 # Plugins incluidos:
 
- * ACK
- * vim-addons-mw-utils
- * vim-bundler
- * coffee-script
- * css-color
- * ctrlp
- * cucumber
- * delimitMate
- * easymotion
- * endwise
- * figitive
- * haml
- * markdown
- * neocomplcache
- * nerdtree
- * nginx
- * snipmate
- * surround
- * syntastic
- * tabular
- * tlib
- * vim-elixir
- * vim-less
- * vim-rails
- * vim-rake
- * vim-ruby
- * vim-slim
- * snippets
- * CSApprox
- * vim-airline
- * easybuffer.vim
-
+  * 'fatih/vim-go'
+  * 'tpope/vim-haml'
+  * 'tpope/vim-markdown'
+  * 'KohPoll/vim-less'
+  * 'slim-template/vim-slim'
+  * 'mustache/vim-mustache-handlebars'
+  * 'jelera/vim-javascript-syntax'
+  * 'kchmck/vim-coffee-script'
+  * 'tpope/vim-rails'
+  * 'tpope/vim-rake'
+  * 'vim-ruby/vim-ruby'
+  * 'MarcWeber/vim-addon-mw-utils'
+  * 'tomtom/tlib_vim'
+  * 'garbas/vim-snipmate'
+  * 'honza/vim-snippets'
+  * 'bling/vim-airline'
+  * 'airblade/vim-gitgutter'
+  * 'scrooloose/syntastic'
+  * 'ctrlpvim/ctrlp.vim'
+  * 'scrooloose/nerdcommenter'
+  * 'tpope/vim-endwise'
+  * 'Raimondi/delimitMate'
+  * 'tpope/vim-fugitive'
+  * 'scrooloose/nerdtree'
+  * 'godlygeek/tabular'
+  * 'tpope/vim-surround'
+  * 'majutsushi/tagbar'
+  * 'ap/vim-css-color'
 
 # Colorscheme: instalados como plugins.
 
- * jellybeans
- * molokai
- * solarized
- * tomorrow
- * hybrid
+  * 'nanotech/jellybeans.vim'
+  * 'tomasr/molokai'
+  * 'altercation/vim-colors-solarized'
+  * 'chriskempson/vim-tomorrow-theme'
+  * 'w0ng/vim-hybrid' 
 
 
 # Mapeos de teclas:
 
  * `<leader>` esta mapeado a la tecla "," (coma).
- * Presiona `F2` para activar NERDTree.
- * Presiona `F3` para entrar/salir del modo pegar.
+ * Presiona `F2` resalta el archivo actual en el arbol de NERDTree.
+ * Presiona `F3` para mostrar/esconder NERDTree.
  * Presiona `F7` para identar automaticamente todo el contenido del buffer.
- * Presiona `<leader>v` para abrir un tab con tu .vimrc para rapida edicion.
  * Presiona `<space>` (Barra Espaciadora) para eliminar busquedas resaltada.
- * Presiona `w!!` para guardar cambios que requieren de SUDO y lo olvidaste.
- * Presiona `<leader>be` para explorar rapidamente los buffers
- * `zc` cierra un fold
- * `zo` abre un fold
- * `zM` cierra todos los fold
- * `zR` abre todos los fold
+ * Pesiona `<leader>h` para dividir el buffer horizontalmente
+ * Pesiona `<leader>v` para dividir el buffer verticalmente
+ * Pesiona `<leader>c` para cerrar un buffer
+ * Presiona `<leader>z` o `<leader>x` para navegar entre los buffers
  * `<leader> cc` Para comentar la linea actual o una seleccion de lineas.
  * `<leader> cu` Para descomentar la linea actual o una seleccion de lineas
 
@@ -98,5 +91,5 @@ e instale sus fuentes favoritas
 * Presiona `<leader>gd` para un `git diff`
 * Presiona `<leader>gc` para un `git commmit`
 * Presiona `<leader>gb` para un `git blame`
-* Presiona `<leader>gl` para un `git log`
-* Presiona `<leader>gp` para un `git push`
+* Presiona `<leader>gsh` para un `git push`
+* Presiona `<leader>gll` para un `git pull`
