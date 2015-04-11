@@ -2,6 +2,7 @@
 set nocompatible
 filetype off "requerido por Vundle!!!
 
+
 "Vundle!!!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -9,54 +10,51 @@ call vundle#begin()
 "Vundle administra Vundle!!! WTF!
 Plugin 'gmarik/Vundle.vim'
 
-"Plugins
 
-""" Ruby/Rails
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'vim-ruby/vim-ruby'
+"""""""""" Plugins """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-""" JS
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'othree/javascript-libraries-syntax.vim'
-
-
-""" Golang
+"""""""""""""""""""""""""" Golang
 Plugin 'fatih/vim-go'
 
-
-""" HTML/CSS/Templates
+"""""""""""""""""""""""""" HTML/CSS/Templates
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 Plugin 'KohPoll/vim-less'
 Plugin 'slim-template/vim-slim'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'digitaltoad/vim-jade'
 
+"""""""""""""""""""""""""" JS
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'kchmck/vim-coffee-script'
 
-"""" Herramientas/Utilerias
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'godlygeek/tabular'
+"""""""""""""""""""""""""" Ruby/Rails
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'vim-ruby/vim-ruby'
+
+"""""""""""""""""""""""""" Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+
+"""""""""""""""""""""""""" Herramientas
 Plugin 'bling/vim-airline'
-Plugin 'ap/vim-css-color'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-endwise'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-surround'
+Plugin 'majutsushi/tagbar'
+Plugin 'ap/vim-css-color'
 
 
-"Esquema de colores
+"""""""""""""""""""""""""" Esquema de colores
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
@@ -64,256 +62,92 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'w0ng/vim-hybrid'
 
 call vundle#end()
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Fin de config de Vundle y requerimientos de plugins """
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+filetype plugin indent on "requerido por Vundle!!!
+
 
 "soporte de 256 colores en la terminal
-set t_Co=256
+"set t_Co=256
 
-"Color del fondo
-set background=dark
 
+"Color del fondo oscuro
+"set background=dark
+
+
+"activacion resaltado de sintaxys
+"syntax on
+
+"""""""""""""""""""""""""""""""""""" Visual """""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Esquema de colores
 colorscheme jellybeans
 
-set synmaxcol=1200
+"enumerar las lineas
+set number
 
-"permitir la tecla retroceso en modo insertar para eliminar.
-set backspace=indent,eol,start
+"Muestra la linea de status
+"teniendo Vim-Airline muestra la generada po dicho plugin
+set laststatus=2
 
-set noswapfile "desactiva los archivos Swap
-set nobackup   "no se crean respaldos permanentes cuando se guarda un archivo
-set nowritebackup "no se crean respaldos temporales al guardar archivos
+set showcmd "Muestra comandos incompletos en esquina inferior derecha
 
-"Desactiva la deteccion de tipo de archivo, por extencio o contenido.
-
-"Activa la deteccion de tipo de archivo desactivada arriba, las extensiones
-"de tipo de archivos y las indentaciones de tipos de archivos.
-filetype plugin indent on "requerido por Vundle!!!
-
-"activacion resaltado de sintaxys
-syntax on
-syntax sync fromstart
-
-"soporte de raton
-set mouse=a
-set ttymouse=xterm2
-
-"hide buffers when not displayed
-set hidden
-
-"historial de comandos en la linea de comandos
-set history=100
-
-"muchos historial de deshacer
-set undolevels=1000
-
-set showcmd     "Muestra comandos incompletos en esquina inferior derecha
-set showmode    "Muestra el modo actual
-
-set number      "enumerar las lineas
-
-set ignorecase "busquedas no distinguen mayusculas y minusculas
-set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
-set hlsearch    "Resalta las busquedas
-
-set visualbell "Desactiva el maldito beep!
-set nowrap        "NO corta las lineas largas para evitar scroll horizontal
-set showbreak=↪ "marca para indicar un quiebre de lineas largas
-set list "muestra tabulaciones, fin de linea, espacios, etc.
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:⋅,nbsp:.
-set colorcolumn=80 "marca el ancho maximo que deberia tener una linea
-"set textwidth=80
-
-"""""   configs de identacion
-"sangrado con espacios y no con tabulacion.
-set expandtab
-set smarttab
-"sangrado de linea de 2 espacios
-set shiftwidth=2
-"TAB inserta 2 espacios de sangrado
-set softtabstop=2
-set tabstop=4
-"autoidenta las lineas. Si escribes una linea con sangria, al dar ENTER o
-"la tecla O para crear una nueva linea, esta linea tendra la misma sangria
-"que la linea anterior.
-set autoindent
-
-"shell
-set shell=/usr/bin/zsh
+"Esconde el modo actual ya que Vim-Airline tambien lo muestra.
+set noshowmode
 
 "Resalta la linea donde esta el cursorline"
 set cursorline
 
-"Codificacion"
-set encoding=utf8
-set fileencoding=utf8
-scriptencoding utf-8
+set colorcolumn=80 "marca el ancho maximo que deberia tener una linea
 
-" Fuente preferida"
-"set guifont=Bitstream\ Vera\ Sans\ Mono\ h:10"
-set guifont=Inconsolata\ Medium\ 12
-"   ^^^ Fuente parchada para compatibilidad con Powerline 
+set nowrap "NO corta las lineas largas para evitar scroll horizontal
 
-"Muestra la linea de status
-set laststatus=2
+set showbreak=↪ "marca para indicar un quiebre de lineas largas
 
-"cursor mas alla del ultimo caracter en modo normal
-set virtualedit=onemore
+set list "muestra tabulaciones, fin de linea, espacios, etc.
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:⋅,nbsp:.
 
-set wildmode=list:longest,full "mostrar opciones de completado de comandos
+set wildmode=list:longest,list:full "mostrar opciones de completado de comandos
 set wildmenu "lista seleccionable de autocompletado de comandos.
 
-"Configs especiales para para Gvim
-if has('gui_running')
-  set lines=40  "Abre Gvim con 40 lineas de alto
-  set guioptions-=T "Elimina la barra de herramientas en Gvim
-endif
-
-"Permite usar w!!  para aquellos archivos que requieren sudo y lo olvidas
-cmap w!! w !sudo tee % >/dev/null
-
-"Cambia el directorio a la ventana actual
-set autochdir
-
-" folding
-set foldcolumn=4 " columns for folding
-set foldmethod=indent
-set foldlevel=9
-set nofoldenable "dont fold by default "
-
-"Vim regresa a la misma linea cuando reabres un archivo
-augroup line_return
-  au!
-  au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \ execute 'normal! g`"zvzz' |
-        \ endif
+"resaltado de syntaxys sincronizado desde el inicio
+augroup vimrc-sync-fromstart
+  autocmd!
+  autocmd BufEnter * :syntax sync fromstart
 augroup END
-
-
-"Recarga automaticamente el buffer cuando un archivo ha tenido algun cambio
-set autoread
-
-"""""""""CONFIGS DE PLUGINS""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""
-
-"NERDtree
-let g:NERDTreeMouseMode = 2
-let g:NERDTreeWinSize = 40
-let NERDTreeChDirMode = 2
-"F2 activa NERDTree
-nnoremap <f2> :NERDTreeToggle .<cr>
-" ,p resalta el archivo actual en el arbol.
-nmap <leader>p :NERDTreeFind<CR>
-
-
-"Syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_check_on_wq=0
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-
-
-"Vim-Ruby
-let g:rubycomplete_classes_in_global = 1
-
-
-"Neocomplete
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
-let g:neocomplete#force_overwrite_completefunc = 1
-
-
-"Config para Vim-Airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-set noshowmode
-if ! has('gui_running')
-  set ttimeoutlen=10
-  augroup FastEscape
-    autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
-  augroup END
-endif
-"Theme para airline
-let g:airline_theme="powerlineish"
-
-
-"Config para CtrlP
-let g:ctrlp_cmd = 'CtrlPBuffer'
-let g:ctrlp_custom_ignore = {
-      \ 'dir': '\v[\/]\.(git|hg|svn)$',
-      \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
-      \ }
-
-
-"Fugitive
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
-
-
-"Tabularize
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
-
-" The following function automatically aligns when typing a
-" supported character
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
-
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-
-
-"vim-go Config
-" Habilitar el resaltado de syntaxis para funciones, metodos y structs
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-""""""""""""""""Fin Configs de Plugins"""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 
-""""""""""MAPEOS DE TECLAS""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""" backups """"""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set noswapfile "desactiva los archivos Swap
+set nobackup   "no se crean respaldos permanentes cuando se guarda un archivo
+set nowritebackup "no se crean respaldos temporales al guardar archivos
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+"""""""""""""""""""""""""""""" Identacion """""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"sangrado con espacios y no con tabulacion.
+set expandtab
+
+"la tecla TAB inserta 2 espacios de sangrado
+set softtabstop=2
+
+"sangrado automatico al saltar la linea de 2 espacios
+set shiftwidth=2
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+"""""""""""""""""""""""""" Comportamientos y mapeos """""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Mapea <leader> a la tecla ,  (coma)
 let mapleader=","
 
@@ -325,22 +159,197 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
-
-"Presiona F3 para entrar/salir al modo pegar mientras editas un archivo
-set pastetoggle=<F3>
-
-
-"Leader+v abre en un tab el vimrc para editar
-nmap <leader>v :tabnew $MYVIMRC<CR>
-
-
 "arregla identacion presionando la tecla F7
 map <F7> mzgg=G`z<CR>
-
 
 "presiona espacio para borrar la busqueda resaltada
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" divide el buffer en forma horizontal y vertical respectivamente
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
 
-"""""""""Fin Mapeos de Teclas""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"navegacion entre los buffers
+noremap <leader>z :bp<CR>
+noremap <leader>q :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>w :bn<CR>
+
+""cerrar un buffer
+noremap <leader>c :bd<CR>
+
+""limpia las busquedas resaltadas
+nnoremap <silent> <leader><space> :noh<cr>
+
+"" Vmap para mantener el Visual Mode despues de presionar shift > y <
+vmap < <gv
+vmap > >gv
+
+"""" Atajos utiles, cuando te equivocas escribiendo alguno de estos comandos
+"ejemplo :w para guardar, si escribes rapido posiblemente escribas :W
+cnoreabbrev W w
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+
+"permitir la tecla retroceso en modo insertar para eliminar.
+set backspace=indent,eol,start
+
+"Recarga automaticamente el buffer cuando un archivo ha tenido algun cambio
+set autoread
+
+" Vim recuerda la posicion del cursor al reabrir un archivo.
+augroup vimrc-remember-cursor-position
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+"#############################################################################"
+"""""""""""""""""""""" Config varias """"""""""""""""""""""""""""""""""""""""""
+"" busquedas
+set ignorecase "busquedas no distinguen mayusculas y minusculas
+set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
+set hlsearch    "Resalta las busquedas
+
+""""""""""""""""Configs especiales para para Gvim """""""""""""""""""""""""""""
+if has('gui_running')
+  set lines=40  "Abre Gvim con 40 lineas de alto
+  set guioptions-=T "Elimina la barra de herramientas en Gvim
+
+  "Letra parchada para compatibilidad con Vim-Airline
+  set guifont=Inconsolata\ Medium\ 12
+endif
+
+
+"""""""""""""""""""""""""""" Codificacion """""""""""""""""""""""""""""""""""""
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"##############################################################################"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" Config para plugins """"""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" Vim-go """""""""""""""""""""""""""""""""""""""""""""
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""Vim-airline """"""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+"integracion con syntastic
+let g:airline#extensions#syntastic#enabled = 1
+"integracion con fugitive
+let g:airline#extensions#branch#enabled = 1
+"Theme para airline
+let g:airline_theme="powerlineish"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" Vim-ruby """""""""""""""""""""""""""""""""""""""""""
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" Syntastic """"""""""""""""""""""""""""""""""""""""""
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list=1
+let g:syntastic_aggregate_errors = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" Ctrlp.vim """"""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$'
+let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
+let g:ctrlp_use_caching = 0
+let g:ctrlp_open_new_file = 'r'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" Vim-fugitive """""""""""""""""""""""""""""""""""""""
+noremap <Leader>ga :Gwrite<CR>
+noremap <Leader>gc :Gcommit<CR>
+noremap <Leader>gsh :Gpush<CR>
+noremap <Leader>gll :Gpull<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" NERDtree """""""""""""""""""""""""""""""""""""""""""
+let g:NERDTreeChDirMode=2
+let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+let g:NERDTreeWinSize = 30
+"resalta el archivo actual en el arbol
+nnoremap <silent> <F2> :NERDTreeFind<CR>
+"muestra/esconde NERDTree.
+noremap <F3> :NERDTreeToggle<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" Tabular """"""""""""""""""""""""""""""""""""""""""""
+nmap <Leader>a :Tabularize /
+vmap <Leader>a :Tabularize /
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" Tagbar """""""""""""""""""""""""""""""""""""""""""""
+nmap <silent> <F4> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [  'p:package', 'i:imports:1', 'c:constants', 'v:variables',
+        \ 't:types',  'n:interfaces', 'w:fields', 'e:embedded', 'm:methods',
+        \ 'r:constructor', 'f:functions' ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : { 't' : 'ctype', 'n' : 'ntype' },
+    \ 'scope2kind' : { 'ctype' : 't', 'ntype' : 'n' },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""                """""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
