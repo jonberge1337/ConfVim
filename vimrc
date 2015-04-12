@@ -52,7 +52,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'majutsushi/tagbar'
 Plugin 'ap/vim-css-color'
-
+Plugin 'Valloric/YouCompleteMe'
 
 """""""""""""""""""""""""" Esquema de colores
 Plugin 'nanotech/jellybeans.vim'
@@ -62,7 +62,7 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'w0ng/vim-hybrid'
 
 call vundle#end()
-"" Fin de config de Vundle y requerimientos de plugins """
+"""""""""""" Fin de config de Vundle y requerimientos de plugins """"""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 filetype plugin indent on "requerido por Vundle!!!
@@ -350,6 +350,15 @@ let g:tagbar_type_go = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""                """""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" YouCompleteMe """"""""""""""""""""""""""""""""""""""
+"el [] vacio deshabilito la tecla TAB para recorrer opciones de completado
+"util ya que Vim-Snipmate usa TAB para completar snippets.
+let g:ycm_key_list_select_completion = [] "default es ['<TAB>', '<Down>']
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" Vim-snipmate  """""""""""""""""""""""""""""""""""""
+" cambia la ejecucion del snippet de TAB a ss para no tener conflicto con YCM
+"imap ss <esc>a<Plug>snipMateNextOrTrigger
+"smap ss <Plug>snipMateNextOrTrigger
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
