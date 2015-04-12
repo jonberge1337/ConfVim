@@ -61,6 +61,7 @@ e instale sus fuentes favoritas
   * 'tpope/vim-surround'
   * 'majutsushi/tagbar'
   * 'ap/vim-css-color'
+  * 'Valloric/YouCompleteMe'
 
 # Colorscheme: instalados como plugins.
 
