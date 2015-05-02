@@ -24,8 +24,10 @@ Plugin 'slim-template/vim-slim'
 Plugin 'mustache/vim-mustache-handlebars'
 
 """""""""""""""""""""""""" JS
-Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/yajs.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 """""""""""""""""""""""""" Ruby/Rails
 Plugin 'tpope/vim-rails'
@@ -77,7 +79,7 @@ filetype plugin indent on "requerido por Vundle!!!
 
 
 "activacion resaltado de sintaxys
-"syntax on
+syntax on
 
 """""""""""""""""""""""""""""""""""" Visual """""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
