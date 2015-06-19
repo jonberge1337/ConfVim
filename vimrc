@@ -206,6 +206,9 @@ set backspace=indent,eol,start
 "Recarga automaticamente el buffer cuando un archivo ha tenido algun cambio
 set autoread
 
+"muchos historial de deshacer
+set undolevels=1000
+
 " Vim recuerda la posicion del cursor al reabrir un archivo.
 augroup vimrc-remember-cursor-position
   autocmd!
@@ -277,12 +280,11 @@ let g:rubycomplete_rails = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""" Syntastic """"""""""""""""""""""""""""""""""""""""""
-let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=2
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_wq = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
