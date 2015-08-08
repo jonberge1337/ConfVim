@@ -287,6 +287,8 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=2
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['jshint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
