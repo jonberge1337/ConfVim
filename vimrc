@@ -8,13 +8,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 "Vundle administra Vundle!!! WTF!
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 
 """""""""" Plugins """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""" Golang
 Plugin 'fatih/vim-go'
+
+""""""""""""""""""""""""""""""""" Elixir
+Plugin 'elixir-lang/vim-elixir'
 
 """""""""""""""""""""""""" HTML/CSS/Templates
 Plugin 'tpope/vim-haml'
@@ -28,6 +31,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'othree/yajs.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'mxw/vim-jsx'
 
 """""""""""""""""""""""""" Ruby/Rails
 Plugin 'tpope/vim-rails'
@@ -55,6 +59,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'majutsushi/tagbar'
 Plugin 'ap/vim-css-color'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rking/ag.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 """""""""""""""""""""""""" Esquema de colores
 Plugin 'nanotech/jellybeans.vim'
@@ -99,7 +105,7 @@ set showcmd "Muestra comandos incompletos en esquina inferior derecha
 set noshowmode
 
 "Resalta la linea donde esta el cursorline"
-set cursorline
+"set cursorline
 
 set colorcolumn=80 "marca el ancho maximo que deberia tener una linea
 
@@ -206,6 +212,10 @@ set backspace=indent,eol,start
 "Recarga automaticamente el buffer cuando un archivo ha tenido algun cambio
 set autoread
 
+"Esconde buffers cuando no se muestra
+"tambien permite los undo/redo luego de cambiar de buffer
+set hidden
+
 "muchos historial de deshacer
 set undolevels=1000
 
@@ -288,7 +298,9 @@ let g:syntastic_auto_loc_list=2
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_javascript_checkers = ['jshint']
+"let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_checkers = ['standard']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -363,6 +375,7 @@ let g:tagbar_type_go = {
 "el [] vacio deshabilito la tecla TAB para recorrer opciones de completado
 "util ya que Vim-Snipmate usa TAB para completar snippets.
 let g:ycm_key_list_select_completion = [] "default es ['<TAB>', '<Down>']
+let g:ycm_filetype_specific_completion_to_disable = { "ruby": 1 }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
