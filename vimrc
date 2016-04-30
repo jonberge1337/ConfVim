@@ -59,7 +59,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'majutsushi/tagbar'
 Plugin 'ap/vim-css-color'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -369,14 +368,6 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
     \ }
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""" YouCompleteMe """"""""""""""""""""""""""""""""""""""
-"el [] vacio deshabilito la tecla TAB para recorrer opciones de completado
-"util ya que Vim-Snipmate usa TAB para completar snippets.
-let g:ycm_key_list_select_completion = [] "default es ['<TAB>', '<Down>']
-let g:ycm_filetype_specific_completion_to_disable = { "ruby": 1 }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
