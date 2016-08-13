@@ -67,7 +67,6 @@ Plugin 'Shougo/neocomplete.vim'
 """""""""""""""""""""""""" Esquema de colores
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'w0ng/vim-hybrid'
 
