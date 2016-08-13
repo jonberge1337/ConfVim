@@ -77,9 +77,8 @@ call vundle#end()
 filetype plugin indent on "requerido por Vundle!!!
 
 
-"soporte de 256 colores en la terminal
-"set t_Co=256
-
+"soporte de 256 colores en vim
+set t_Co=256
 
 "Color del fondo oscuro
 "set background=dark
