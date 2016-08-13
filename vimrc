@@ -61,6 +61,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'ap/vim-css-color'
 Plugin 'mileszs/ack.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Yggdroot/indentLine'
+Plugin 'Shougo/neocomplete.vim'
 
 """""""""""""""""""""""""" Esquema de colores
 Plugin 'nanotech/jellybeans.vim'
@@ -373,8 +375,21 @@ let g:tagbar_type_go = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""" IdentLine """""""""""""""""""""""""""""""""""""""
+let g:indentLine_enabled = 1
+let g:indentLine_concealcursor = 0
+let g:indentLine_char = '┆'
+let g:indentLine_faster = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""" Vim-snipmate  """""""""""""""""""""""""""""""""""""
 " cambia la ejecucion del snippet de TAB a ss para no tener conflicto con YCM
 "imap ss <esc>a<Plug>snipMateNextOrTrigger
 "smap ss <Plug>snipMateNextOrTrigger
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" NeoComplete  """""""""""""""""""""""""""""""""""""""
+let g:neocomplete#enable_at_startup = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
