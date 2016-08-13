@@ -59,7 +59,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'majutsushi/tagbar'
 Plugin 'ap/vim-css-color'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'terryma/vim-multiple-cursors'
 
 """""""""""""""""""""""""" Esquema de colores
