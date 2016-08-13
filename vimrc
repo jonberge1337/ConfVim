@@ -91,8 +91,8 @@ syntax on
 """""""""""""""""""""""""""""""""""" Visual """""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Esquema de colores
-let g:jellybeans_use_term_background_color = 1  "solo para jellybeans
-let g:jellybeans_use_term_italics = 1
+"let g:jellybeans_use_term_background_color = 0  "solo para jellybeans
+"let g:jellybeans_use_term_italics = 1
 colorscheme jellybeans
 
 "enumerar las lineas
