@@ -159,7 +159,7 @@ set shiftwidth=2
 """""""""""""""""""""""""" Comportamientos y mapeos """""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Mapea <leader> a la tecla ,  (coma)
-let mapleader=","
+let mapleader = "\\"
 
 "Cortar, Copiar y Pegar con las teclas ,d ,y y ,p
 vmap <Leader>y "+y
