@@ -17,6 +17,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/dbext.vim'
 
 """""""""""""""""""""""""" Esquema de colores
 Plug 'chriskempson/base16-vim'
