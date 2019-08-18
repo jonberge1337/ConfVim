@@ -11,13 +11,16 @@ call plug#begin('~/.vim/plugged')
 
 """""""""""""""""""""""""" Herramientas
 Plug 'easymotion/vim-easymotion'
-Plug 'valloric/youcompleteme'
+" Plug 'valloric/youcompleteme'
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/dbext.vim'
+Plug 'ervandew/supertab'
+Plug 'dense-analysis/ale'
+Plug 'SirVer/ultisnips'
 
 """""""""""""""""""""""""" Esquema de colores
 Plug 'chriskempson/base16-vim'
@@ -25,8 +28,7 @@ Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-python/python-syntax'
 
-
-"""""""""""""""""""""""""" Esquema de colores
+"""""""""""""""""""""""""" Juegos vim
 Plug 'johngrib/vim-game-code-break'
 Plug 'johngrib/vim-game-snake'
 
@@ -37,7 +39,7 @@ call plug#end()
 set t_Co=256
 
 "Color del fondo oscuro
-"set background=dark
+set background=dark
 
 
 "activacion resaltado de sintaxys
@@ -47,7 +49,7 @@ syntax on
 "Esquema de colores
 "let g:jellybeans_use_term_background_color = 0  "solo para jellybeans
 "let g:jellybeans_use_term_italics = 1
-" colorscheme jellybeans
+colorscheme gruvbox
 
 "enumerar las lineas
 set number
@@ -59,7 +61,7 @@ set laststatus=2
 set showcmd "Muestra comandos incompletos en esquina inferior derecha
 
 "Esconde el modo actual ya que Vim-Airline tambien lo muestra.
-" set noshowmode
+set noshowmode
 
 "Resalta la linea donde esta el cursorline"
 set cursorline
@@ -70,8 +72,8 @@ set nowrap "NO corta las lineas largas para evitar scroll horizontal
 
 set showbreak=↪ "marca para indicar un quiebre de lineas largas
 
-set list "muestra tabulaciones, fin de linea, espacios, etc.
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:⋅,nbsp:.
+" set list "muestra tabulaciones, fin de linea, espacios, etc.
+" set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:⋅,nbsp:.
 
 set wildmode=list:longest,list:full "mostrar opciones de completado de comandos
 set wildmenu "lista seleccionable de autocompletado de comandos.
@@ -130,3 +132,32 @@ set fileencodings=utf-8
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:python_highlight_all = 1
+"#############################################################################"
+"""""""""""""""""""""" Prueba supertab """"""""""""""""""""""""""""""""""""""""""
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"  
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>" 
+let g:UltiSnipsEditSplit="vertical"
+
+"#############################################################################"
+"""""""""""""""""""""" Prueba ale """"""""""""""""""""""""""""""""""""""""""
+let g:ale_sign_error = '◉'
+let g:ale_sign_warning = '◉'
+highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=#C30500 guibg=#F5F5F5
+highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
+let g:ale_warn_about_trailing_whitespace = 0
+let g:ale_maximum_file_size = 1024 * 1024
+let g:ale_completion_enabled = 1
+let g:ale_code_actions_enabled = 1
+let g:ale_set_balloons_legacy_echo = 1
+let g:ale_c_parse_compile_commands = 1
+
+" Options for different linters.
+let g:ale_python_mypy_ignore_invalid_syntax = 1
+let g:ale_python_mypy_options = '--incremental'
+let g:ale_typescript_tslint_ignore_empty_files = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let b:ale_linters = ['flake8', 'pylint']
