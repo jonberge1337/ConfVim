@@ -21,6 +21,7 @@ Plug 'vim-scripts/dbext.vim'
 Plug 'ervandew/supertab'
 Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
+Plug 'alcesleo/vim-uppercase-sql'
 
 """""""""""""""""""""""""" Esquema de colores
 Plug 'chriskempson/base16-vim'
@@ -140,7 +141,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"  
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>" 
 let g:UltiSnipsEditSplit="vertical"
-
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 "#############################################################################"
 """""""""""""""""""""" Prueba ale """"""""""""""""""""""""""""""""""""""""""
 let g:ale_sign_error = '◉'
