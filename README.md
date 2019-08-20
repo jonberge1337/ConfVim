@@ -7,8 +7,10 @@
 [vim-plug](https://github.com/junegunn/vim-plug)
 
 ### Instalar pynvim y jedi
-`python3 -m pip install jedi`
-`python3 -m pip install pynvim`
+``` bash
+$ python3 -m pip install jedi
+$ python3 -m pip install pynvim
+```
 
 ### Instalar los plugins
 `Abra vim y ejecute :PluginInstall (o vim +PluginInstall +qall para los amantes de la terminal)`
