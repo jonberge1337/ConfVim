@@ -1,3 +1,5 @@
+# Instalacion VIM en debian instalar vim-nox para evitar problemas compatibilidad con python
+
 # Configurar VIM
 
 ### Lo primero instalar vim plug
