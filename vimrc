@@ -22,6 +22,12 @@ Plug 'ervandew/supertab'
 Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 Plug 'alcesleo/vim-uppercase-sql'
+Plug 'honza/vim-snippets'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+" Plug 'davidhalter/jedi-vim'
+Plug 'deoplete-plugins/deoplete-jedi'
 
 """""""""""""""""""""""""" Esquema de colores
 Plug 'chriskempson/base16-vim'
@@ -162,3 +168,4 @@ let g:ale_typescript_tslint_ignore_empty_files = 1
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let b:ale_linters = ['flake8', 'pylint']
+let g:deoplete#enable_at_startup = 1
