@@ -90,6 +90,28 @@ set wildmenu
 
 " set guicursor= "Cursor siempre igual
 
+"""" Atajos utiles, cuando te equivocas escribiendo alguno de estos comandos
+"ejemplo :w para guardar, si escribes rapido posiblemente escribas :W
+cnoreabbrev W w
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+
+""""""""""""""""Configs especiales para para Gvim """""""""""""""""""""""""""""
+if has('gui_running')
+  colorscheme gruvbox
+  set guioptions-=m "Elimina la barra del menu en Gvim
+  set guioptions-=T "Elimina la barra de herramientas en Gvim
+  set guioptions-=r "Elimina la barra de scroll derecho
+  set guioptions-=L "Elimina la barra de scroll izquiedo
+endif
+
 """""""""""""""""""""""""""""""" backups """"""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set noswapfile "desactiva los archivos Swap
