@@ -7,19 +7,7 @@ sudo aptitude install nodejs para que funciones coc
 
 git clone https://github.com/vim/vim
 cd vim
-sudo ./configure --enable-multibyte \
-       --enable-fontset \
-       --enable-xim \
-       --enable-gui=auto \
-       --enable-luainterp=dynamic \
-       --enable-pythoninterp=yes \
-       --enable-rubyinterp=dynamic \
-       --enable-perlinterp \
-       --enable-cscope \
-       --enable-sniff \
-       --with-x \
-       --with-compiledby=erocpil \
-       --with-features=huge
+sudo ./configure --enable-multibyte --enable-fontset --enable-xim --enable-gui=auto --enable-luainterp=dynamic --enable-pythoninterp=yes --enable-python3interp=yes --enable-rubyinterp=yes --enable-perlinterp=yes --enable-cscope --enable-sniff --with-x --with-compiledby=erocpil --with-features=huge
 make
 sudo make install
 
@@ -40,15 +28,15 @@ sudo make install
 ```
 
 ### Lo primero instalar vim plug
-       `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+`curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 
-         [vim-plug](https://github.com/junegunn/vim-plug)
+[vim-plug](https://github.com/junegunn/vim-plug)
 
 ### Instalar pynvim y jedi
-         ``` bash
-         $ python3 -m pip install jedi
-         ```
+``` bash
+$ python3 -m pip install jedi
+```
 
 ### Instalar los plugins
-         `Abra vim y ejecute :PluginInstall (o vim +PluginInstall +qall para los amantes de la terminal)`
+`Abra vim y ejecute :PluginInstall (o vim +PluginInstall +qall para los amantes de la terminal)`
