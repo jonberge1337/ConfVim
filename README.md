@@ -5,6 +5,8 @@ y por si acaso sudo aptitude purge vim
 
 sudo aptitude install nodejs para que funciones coc
 
+git clone https://github.com/vim/vim
+cd vim
 sudo ./configure --enable-multibyte \
        --enable-fontset \
        --enable-xim \
