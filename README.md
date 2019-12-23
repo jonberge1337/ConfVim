@@ -7,7 +7,7 @@ sudo aptitude install nodejs para que funciones coc
 
 git clone https://github.com/vim/vim  
 cd vim  
-sudo ./configure --enable-multibyte --enable-fontset --enable-xim --enable-gui=auto --enable-luainterp=dynamic --enable-pythoninterp=yes --enable-python3interp=yes --enable-rubyinterp=yes --enable-perlinterp=yes --enable-cscope  --with-x --with-compiledby=erocpil --with-features=huge  
+sPluginnudo ./configure --enable-multibyte --enable-fontset --enable-xim --enable-gui=auto --enable-luainterp=dynamic --enable-pytnudo ./configure --enable-multibyte --enable-fontset --enable-xim --enable-gui=auto --enable-luainterp=dynamic --enable-pytudo ./configure --enable-multibyte --enable-fontset --enable-xim --enable-gui=auto --enable-luainterp=dynamic --enable-python3interp=yes --enable-rubyinterp=yes --enable-perlinterp=yes --enable-cscope  --with-x --with-compiledby=erocpil --with-features=huge  
 make  
 sudo make install
 
