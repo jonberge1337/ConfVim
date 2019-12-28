@@ -1,6 +1,10 @@
-set nocompatible
+if has('nvim')
+    call plug#begin('~/.local/share/nvim/plugged')
+else
+    set nocompatible
 
-call plug#begin('~/.vim/plugged')
+    call plug#begin('~/.vim/plugged')
+endif
 
 """""""""" Plugins """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -15,7 +19,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-dadbod'
 Plug 'ervandew/supertab'
-Plug 'dense-analysis/ale', { 'on':  'ALEToggle' } 
+Plug 'dense-analysis/ale', { 'on':  'ALEToggle' }
 " Plug 'SirVer/ultisnips'
 Plug 'alcesleo/vim-uppercase-sql'
 Plug 'dhruvasagar/vim-table-mode'
@@ -29,6 +33,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'aklt/plantuml-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dbeniamine/cheat.sh-vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-afterimage'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'VincentCordobes/vim-translate'
 
 """""""""""""""""""""""""" Esquema de colores
 Plug 'flazz/vim-colorschemes'
@@ -51,8 +59,8 @@ set background=dark
 
 "activacion resaltado de sintaxys
 syntax on
-"""""""""""""""""""""""""""""""""""" Visual """""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""" Visual """""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 colorscheme gruvbox
 
@@ -64,11 +72,12 @@ set number
 set laststatus=2
 
 "que no tarde al darle escape
-set ttimeoutlen=0
+set ttimeoutlen=50
 " a la espera de otros comandos 1000 milisegundos
 set timeoutlen=1000
 
-set showcmd "Muestra comandos incompletos en esquina inferior derecha
+"Muestra comandos incompletos en esquina inferior derecha
+set showcmd
 
 "Esconde el modo actual ya que Vim-Airline tambien lo muestra.
 set noshowmode
@@ -79,16 +88,28 @@ set backspace=indent,eol,start
 "Resalta la linea donde esta el cursorline"
 set cursorline
 
-set colorcolumn=80 "marca el ancho maximo que deberia tener una linea
+"marca el ancho maximo que deberia tener una linea
+" set colorcolumn=80
 
-set nowrap "NO corta las lineas largas para evitar scroll horizontal
+"NO corta las lineas largas para evitar scroll horizontal
+set nowrap
 
-set showbreak=↪ "marca para indicar un quiebre de lineas largas
+"marca para indicar un quiebre de lineas largas
+set showbreak=↪
 
 " para ver las opciones posibles aunqe en vim todabia no aparecen como neovim
 set wildmenu
 
-" set guicursor= "Cursor siempre igual
+" Poder rehacer los cambios aun cerrando el archivo
+set undofile
+if has('nvim')
+    set undodir=~/.vim/undodir
+else
+    set undodir=~/.config/nvim/undodir
+endif
+
+
+
 
 """" Atajos utiles, cuando te equivocas escribiendo alguno de estos comandos
 "ejemplo :w para guardar, si escribes rapido posiblemente escribas :W
@@ -104,7 +125,7 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 """"""""""""""""Configs especiales para para Gvim """""""""""""""""""""""""""""
-if has('gui_running')
+if has('gui_running') && !has('nvim')
   colorscheme gruvbox
   set guioptions-=m "Elimina la barra del menu en Gvim
   set guioptions-=T "Elimina la barra de herramientas en Gvim
@@ -122,22 +143,6 @@ set nowritebackup "no se crean respaldos temporales al guardar archivos
 
 
 
-
-"""""""""""""""""""""""""""""" Identacion """""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"sangrado con espacios y no con tabulacion.
-set expandtab
-
-"la tecla TAB inserta 4 espacios de sangrado
-set softtabstop=4
-
-"sangrado automatico al saltar la linea de 4 espacios
-set shiftwidth=4
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-
 "#############################################################################"
 """""""""""""""""""""" Config varias """"""""""""""""""""""""""""""""""""""""""
 "" busquedas
@@ -145,11 +150,6 @@ set ignorecase "busquedas no distinguen mayusculas y minusculas
 set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
 set hlsearch    "Resalta las busquedas
 
-"""""""""""""""""""""""""""" Codificacion """""""""""""""""""""""""""""""""""""
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "##############################################################################"
 
 "==================== airline ====================
@@ -166,3 +166,17 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 "==================== EasyMotion ====================
 let g:EasyMotion_leader_key = ',,'
+
+"==================== Ejecutar ======================
+autocmd filetype cpp nnoremap <F5> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
+autocmd filetype c nnoremap <F5> :w <bar> !gcc -std=c99 -lm % -o %:p:h/%:t:r.out && ./%:r.out<CR>
+autocmd filetype java nnoremap <F5> :w <bar> !clear;javac % && java -enableassertions %:p <CR>
+autocmd filetype python nnoremap <F5> :w <bar> !clear;python3 % <CR>
+autocmd filetype perl nnoremap <F5> :w <bar> !clear;perl % <CR>
+autocmd filetype go nnoremap <F5> :w <bar> !go build % && ./%:p <CR>
+autocmd filetype *.md inoremap <CR> <SPACE><SPACE><CR>
+
+"==================== Leader ======================
+let mapleader = ","
+
+"inoremap ;<cr> <end>;<cr>
