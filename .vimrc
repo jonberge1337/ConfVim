@@ -179,4 +179,6 @@ autocmd filetype *.md inoremap <CR> <SPACE><SPACE><CR>
 "==================== Leader ======================
 let mapleader = ","
 
-"inoremap ;<cr> <end>;<cr>
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
