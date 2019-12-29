@@ -43,6 +43,6 @@ URxvt.font:            9x15
 URxvt.perl-ext-common:  default
 
 URxvt.font: xft:DejaVuSansMono Nerd Font:size=12
-URxvt.boldfont:xft:Monospace-Bold:pixelsize=15
+URxvt.boldfont:xft:DejaVuSansMono-Bold:pixelsize=12
 
 URxvt.scrollBar: false
