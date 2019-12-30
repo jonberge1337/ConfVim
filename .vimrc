@@ -1,10 +1,6 @@
-if has('nvim')
-    call plug#begin('~/.local/share/nvim/plugged')
-else
-    set nocompatible
+set nocompatible
 
-    call plug#begin('~/.vim/plugged')
-endif
+call plug#begin('~/.vim/plugged')
 
 """""""""" Plugins """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -102,14 +98,10 @@ set wildmenu
 
 " Poder rehacer los cambios aun cerrando el archivo
 set undofile
-if has('nvim')
-    set undodir=~/.vim/undodir
-else
-    set undodir=~/.config/nvim/undodir
-endif
+set undodir=~/.vim/undodir
 
-
-
+" Poder hacer scroll en vim normal
+set mouse=a
 
 """" Atajos utiles, cuando te equivocas escribiendo alguno de estos comandos
 "ejemplo :w para guardar, si escribes rapido posiblemente escribas :W

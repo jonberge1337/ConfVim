@@ -35,7 +35,8 @@
 *color7:  #a89984
 *color15: #ebdbb2
 
-URxvt.perl-ext-common:  default,matcher
+URxvt.perl-ext-common:  default,matcher,selection-to-clipboard
+URxvt.iso14755: False
 URxvt.urlLauncher:      firefox
 URxvt.matcher.button:   1
 
@@ -44,5 +45,7 @@ URxvt.perl-ext-common:  default
 
 URxvt.font: xft:DejaVuSansMono Nerd Font:size=12
 URxvt.boldfont:xft:DejaVuSansMono-Bold:pixelsize=12
+
+URxvt*scrollWithBuffer: true
 
 URxvt.scrollBar: false
