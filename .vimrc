@@ -15,7 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-dadbod'
 Plug 'ervandew/supertab'
-Plug 'dense-analysis/ale', { 'on':  'ALEToggle' }
+Plug 'dense-analysis/ale'
 " Plug 'SirVer/ultisnips'
 Plug 'alcesleo/vim-uppercase-sql'
 Plug 'dhruvasagar/vim-table-mode'
@@ -33,6 +33,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-afterimage'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'VincentCordobes/vim-translate'
+Plug 'junegunn/vader.vim'
+Plug 'vim-perl/vim-perl'
 
 """""""""""""""""""""""""" Esquema de colores
 Plug 'flazz/vim-colorschemes'
